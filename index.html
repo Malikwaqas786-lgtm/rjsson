@@ -1,304 +1,1354 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RJSSON | Men's Leather Atelier</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#080808">
+
+<title>RJSSON | Premium Clothing Worldwide</title>
+
+<meta name="description"
+content="Discover premium leather jackets, hoodies and contemporary apparel by RJSSON. Explore our collection and contact us for worldwide orders and wholesale enquiries.">
+
 <style>
 :root {
-  --black:#0b0908;
-  --panel:#17120f;
-  --gold:#c79a61;
-  --cream:#f1e5d3;
-  --muted:#a99a89;
+  --black: #080808;
+  --panel: #11100e;
+  --gold: #d8ad65;
+  --cream: #f4eee4;
+  --muted: #aaa39a;
+  --border: rgba(216,173,101,.28);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--cream);font-family:Manrope,Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #403124;background:#0b0908;position:sticky;top:0;z-index:5}
-.logo{font-size:29px;letter-spacing:8px;color:var(--gold);font-family:Georgia,serif}
-.logo small{display:block;text-align:center;font:8px Manrope,sans-serif;letter-spacing:4px;color:#d4c3ad;margin-top:4px}
-nav{display:flex;gap:32px}
-nav a{font-size:10px;letter-spacing:2px;text-transform:uppercase}
-nav a:hover{color:var(--gold)}
-.cart{border:1px solid var(--gold);padding:10px 14px;color:var(--gold);background:transparent;font-size:10px;letter-spacing:1px}
-.hero{min-height:610px;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #765331}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#0b0908 0%,rgba(11,9,8,.96) 28%,rgba(11,9,8,.58) 56%,rgba(11,9,8,.05) 100%),url('images/showroom.jpg') center 43%/cover;animation:zoom 1.5s ease-out}
-.hero-copy{position:relative;z-index:1;padding:80px 8%;max-width:700px;animation:rise 1s ease-out}
-.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
-h1{font:500 clamp(55px,7vw,94px)/.91 'Cormorant Garamond',Georgia,serif;margin:26px 0}
-h1 em{color:var(--gold);font-weight:400}
-.hero p{font-size:12px;color:#d5c8b8;line-height:2;max-width:360px}
-.button{display:inline-block;background:var(--gold);color:#100b07;padding:16px 23px;margin-top:28px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:.3s}
-.button:hover{background:var(--cream);transform:translateY(-3px)}
-.benefits{display:flex;gap:25px;flex-wrap:wrap;margin-top:38px;font-size:9px;letter-spacing:1px;color:#e1d2bf}
-.benefits span:before{content:"✦ ";color:var(--gold)}
-section{padding:76px 7%}
-.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}
-.kicker{font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
-h2{font:500 clamp(37px,5vw,60px)/1.05 'Cormorant Garamond',Georgia,serif;margin-top:12px}
-.heading p{font-size:11px;line-height:1.9;color:var(--muted);max-width:300px}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.category{height:300px;position:relative;overflow:hidden;background:#241a13;border:1px solid #503b28}
-.category img{width:100%;height:100%;object-fit:cover;filter:brightness(.72);transition:transform .8s,filter .6s}
-.category:hover img{transform:scale(1.07);filter:brightness(.95)}
-.category:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.94))}
-.category-label{position:absolute;z-index:1;bottom:20px;left:17px}
-.category-label h3{font:26px 'Cormorant Garamond',Georgia,serif}
-.category-label span{display:block;font-size:9px;letter-spacing:2px;color:var(--gold);margin-top:7px}
-.collection{background:#100d0b}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
-.filter{background:transparent;color:var(--muted);border:1px solid #493626;padding:10px 15px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
-.filter.active,.filter:hover{background:var(--gold);color:#100b07;border-color:var(--gold)}
-.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.product{min-width:0;animation:rise .6s both}
-.product-photo{height:350px;position:relative;background:#211710;overflow:hidden;border:1px solid #39291d}
-.product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .5s;filter:brightness(.88)}
-.product:hover img{transform:scale(1.055);filter:brightness(1)}
-.tag{position:absolute;top:12px;left:12px;background:#100c09;color:var(--gold);padding:8px 10px;font-size:8px;letter-spacing:1.5px}
-.add{position:absolute;bottom:10px;left:10px;right:10px;background:rgba(12,9,7,.92);border:1px solid var(--gold);color:var(--cream);padding:12px;font-size:9px;letter-spacing:2px;text-transform:uppercase}
-.product-info{padding:15px 2px}
-.product-info small{color:var(--gold);font-size:8px;letter-spacing:2px;text-transform:uppercase}
-.product-info h3{font:26px 'Cormorant Garamond',Georgia,serif;margin:7px 0}
-.product-info p{color:#e4c9a6;font-size:12px}
-.story{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}
-.story img{width:100%;height:430px;object-fit:cover;filter:brightness(.78)}
-.story p{color:var(--muted);font-size:12px;line-height:2;margin-top:20px}
-.promise{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #453426;border-bottom:1px solid #453426}
-.promise div{text-align:center;padding:30px 12px;border-right:1px solid #453426}
-.promise div:last-child{border:0}
-.promise strong{display:block;font:25px 'Cormorant Garamond',Georgia,serif;color:var(--gold);margin-bottom:8px}
-.promise span{font-size:10px;color:var(--muted)}
-footer{padding:45px 7%;border-top:1px solid #453426;text-align:center;background:#080706}
-footer p{color:var(--muted);font-size:10px;line-height:2;margin-top:12px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--gold);color:#100b07;padding:13px 20px;font-size:11px;display:none;z-index:10}
-@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
-@media(max-width:850px){
- nav{gap:13px}
- .categories{grid-template-columns:repeat(2,1fr)}
- .products{grid-template-columns:repeat(2,minmax(0,1fr))}
- .product-photo{height:340px}
- .story{gap:25px}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
 }
-@media(max-width:600px){
- header{padding:0 5%;height:70px}
- .logo{font-size:23px;letter-spacing:5px}
- nav{display:none}
- .hero{min-height:600px;align-items:flex-end}
- .hero-bg{background:linear-gradient(0deg,#0b0908 0%,rgba(11,9,8,.86) 48%,rgba(11,9,8,.15) 100%),url('images/showroom.jpg') 60% center/cover}
- .hero-copy{padding:55px 6% 45px}
- h1{font-size:64px}
- section{padding:58px 5%}
- .heading{display:block}
- .heading p{margin-top:14px}
- .category{height:240px}
- .category-label h3{font-size:22px}
- .product-photo{height:270px}
- .product-info h3{font-size:22px}
- .story{grid-template-columns:1fr;gap:25px}
- .story img{height:340px}
- .promise{grid-template-columns:1fr}
- .promise div{border-right:0;border-bottom:1px solid #453426}
- .promise div:last-child{border-bottom:0}
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea {
+  font: inherit;
 }
-@media(max-width:380px){.product-photo{height:220px}.hero h1{font-size:55px}}
+
+button, .btn { cursor: pointer; }
+
+.announcement {
+  text-align: center;
+  padding: 10px;
+  background: #18140e;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,8,8,.96);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1400px;
+  margin: auto;
+  padding: 16px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 32px;
+  letter-spacing: 6px;
+}
+
+.logo small {
+  display: block;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 13px;
+}
+
+nav a:hover { color: var(--gold); }
+
+.nav-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-actions button {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  padding: 10px 13px;
+}
+
+#cartCount {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.hero {
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.58)),
+    url("images/hero.jpg") center/cover,
+    #17130e;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-content { max-width: 680px; }
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 1.04;
+  margin: 22px 0;
+}
+
+h1 span { color: var(--gold); }
+
+.hero p {
+  color: #c4bdb3;
+  line-height: 1.9;
+  max-width: 520px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 23px;
+  background: var(--gold);
+  color: #100d08;
+  border: 1px solid var(--gold);
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  margin-left: 8px;
+}
+
+.section {
+  max-width: 1450px;
+  margin: auto;
+  padding: 75px 5%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: clamp(30px, 4vw, 46px);
+  margin: 10px 0;
+}
+
+.section-heading p,
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filters button {
+  padding: 11px 17px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cream);
+}
+
+.filters button.active,
+.filters button:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.product {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .25s, border-color .25s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  border-color: var(--border);
+}
+
+.product-image {
+  height: 310px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at center, #29231a, #12110f 70%);
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform .4s;
+}
+
+.product:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: #111;
+  padding: 6px 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.product-info { padding: 17px; }
+
+.product-info h3 {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0 0 9px;
+}
+
+.product-info p {
+  min-height: 38px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.product-price {
+  color: var(--gold);
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.product-actions button {
+  flex: 1;
+  min-width: 90px;
+  padding: 11px 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  font-size: 10px;
+}
+
+.product-actions button:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.product-actions .quote-btn {
+  border-color: #555;
+  color: var(--cream);
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.story-panel {
+  min-height: 300px;
+  background:
+    linear-gradient(135deg, #211b11, #090909);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 35px;
+}
+
+.story-panel strong {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 52px);
+  letter-spacing: 5px;
+}
+
+.story-text p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.feature {
+  padding: 30px 15px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.feature:last-child { border-right: 0; }
+
+.feature strong {
+  display: block;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  margin-bottom: 10px;
+}
+
+.feature span {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+form {
+  display: grid;
+  gap: 13px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  color: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+form .btn { width: 100%; }
+
+footer {
+  padding: 35px 5%;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer a { color: var(--gold); }
+
+.cart-box {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  width: min(360px, calc(100% - 32px));
+  background: #12110f;
+  border: 1px solid var(--gold);
+  padding: 20px;
+  display: none;
+  max-height: 75vh;
+  overflow: auto;
+}
+
+.cart-box.open { display: block; }
+
+.cart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-head button {
+  background: none;
+  border: 0;
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.cart-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.cart-line button {
+  background: none;
+  color: #e4a28c;
+  border: 0;
+}
+
+.cart-total {
+  padding: 15px 0;
+  color: var(--gold);
+}
+
+.cart-note {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+@media (max-width: 1050px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  nav { gap: 12px; }
+}
+
+@media (max-width: 760px) {
+  .nav { flex-wrap: wrap; }
+  nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding: 8px 0;
+  }
+  nav a { white-space: nowrap; }
+  .hero { min-height: 470px; padding: 55px 6%; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .product-image { height: 230px; }
+  .product-info { padding: 12px; }
+  .product-info h3 { font-size: 16px; }
+  .story, .contact-grid { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .feature:nth-child(2) { border-right: 0; }
+  .feature:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .btn-outline { margin: 10px 0 0; }
+}
+
+@media (max-width: 380px) {
+  .grid { grid-template-columns: 1fr; }
+  .product-image { height: 320px; }
+  .logo { font-size: 26px; }
+}
+  /* =====================================
+   RJSSON — PREMIUM ANIMATION SYSTEM
+===================================== */
+
+/* Smooth page entrance */
+body {
+  overflow-x: hidden;
+  animation: pageEntrance 1s ease both;
+}
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Premium announcement bar */
+.announcement {
+  position: relative;
+  overflow: hidden;
+}
+
+.announcement::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(216, 173, 101, 0.22),
+    transparent
+  );
+  animation: announcementShine 5s ease-in-out infinite;
+}
+
+@keyframes announcementShine {
+  0%, 20% { left: -100%; }
+  75%, 100% { left: 150%; }
+}
+
+/* Animated hero background */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-size: cover, cover, auto;
+  animation: heroBackground 18s ease-in-out infinite alternate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(216,173,101,0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 75% 60%,
+      rgba(216,173,101,0.08),
+      transparent 30%
+    );
+  animation: goldenAtmosphere 12s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    transparent,
+    rgba(216,173,101,0.8),
+    transparent
+  );
+  box-shadow: 0 0 25px rgba(216,173,101,0.35);
+  animation: goldenLine 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes heroBackground {
+  from { background-position: center center; }
+  to { background-position: 55% center; }
+}
+
+@keyframes goldenAtmosphere {
+  from { transform: translate(-3%, -2%) rotate(0deg); }
+  to { transform: translate(3%, 2%) rotate(8deg); }
+}
+
+@keyframes goldenLine {
+  from { transform: translateX(0); opacity: 0.2; }
+  to { transform: translateX(80px); opacity: 0.9; }
+}
+
+/* Hero text entrance */
+.hero .eyebrow,
+.hero h1,
+.hero p,
+.hero .btn {
+  opacity: 0;
+  animation: heroTextReveal 1s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+.hero .eyebrow {
+  animation-delay: .25s;
+}
+
+.hero h1 {
+  animation-delay: .55s;
+}
+
+.hero p {
+  animation-delay: .85s;
+}
+
+.hero .btn {
+  animation-delay: 1.1s;
+}
+
+@keyframes heroTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Elegant gold line under headings */
+.section-heading h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 2px;
+  margin-top: 12px;
+  background: var(--gold);
+  transform-origin: left;
+  transition: width .5s ease;
+}
+
+.section-heading h2:hover::after {
+  width: 100%;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ /* Premium product cards */
+.product {
+  opacity: 1;
+  transform: translateY(0);
+  animation: productEntrance .7s ease both;
+}
+
+.product:nth-child(1) { animation-delay: .05s; }
+.product:nth-child(2) { animation-delay: .12s; }
+.product:nth-child(3) { animation-delay: .19s; }
+.product:nth-child(4) { animation-delay: .26s; }
+.product:nth-child(5) { animation-delay: .33s; }
+.product:nth-child(6) { animation-delay: .40s; }
+.product:nth-child(7) { animation-delay: .47s; }
+.product:nth-child(8) { animation-delay: .54s; }
+
+@keyframes productEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product {
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+/* Golden buttons */
+.btn,
+.product-actions button,
+.nav-actions button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+.btn:hover,
+.product-actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* Animated logo */
+.logo {
+  transition:
+    color .35s ease,
+    letter-spacing .35s ease;
+}
+
+.logo:hover {
+  color: #f4d49a;
+  letter-spacing: 8px;
+}
+
+/* Story panel ambient effect */
+.story-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-panel::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(216,173,101,.2);
+  border-radius: 50%;
+  right: -70px;
+  bottom: -90px;
+  animation: ringFloat 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes ringFloat {
+  from {
+    transform: scale(.8) rotate(0deg);
+    opacity: .3;
+  }
+  to {
+    transform: scale(1.3) rotate(40deg);
+    opacity: .9;
+  }
+}
+/* Contact form focus effect */
+input,
+select,
+textarea {
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(216,173,101,.10);
+}
+
+/* Cart entrance */
+.cart-box {
+  transform: translateY(15px);
+  opacity: 0;
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.cart-box.open {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
 </style>
 </head>
+
 <body>
 
+<div class="announcement">
+  RJSSON · CONTEMPORARY APPAREL · INTERNATIONAL ENQUIRIES WELCOME
+</div>
+
 <header>
-  <a href="#home" class="logo">RJSSON<small>THE LEATHER ATELIER</small></a>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Collections</a>
-    <a href="#collection">Jackets</a>
-    <a href="#story">About</a>
-  </nav>
-  <button class="cart" onclick="showCart()">BAG (<span id="count">0</span>)</button>
+  <div class="nav">
+    <a class="logo" href="#home">
+      RJSSON
+      <small>THE LEATHER ATELIER</small>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="cartToggle" type="button" aria-label="Open shopping cart">
+        CART <span id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
 </header>
 
 <main>
-<div class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-copy">
-    <div class="eyebrow">Premium men's leather jackets</div>
-    <h1>Timeless Style.<br><em>Bold Character.</em></h1>
-    <p>Discover a considered collection of men's leather jackets, presented with the atmosphere of a luxury fashion showroom.</p>
-    <a class="button" href="#collection">Explore Collection →</a>
-    <div class="benefits"><span>Cash on Delivery</span><span>Men's Collection</span><span>Timeless Design</span></div>
-  </div>
-</div>
-
-<section id="categories">
-  <div class="heading">
-    <div><div class="kicker">The collection</div><h2>Find Your Signature.</h2></div>
-    <p>Four distinct leather-jacket styles. One unmistakable attitude.</p>
-  </div>
-  <div class="categories">
-    <a class="category" href="#collection" onclick="setFilter('biker')">
-       <img src="images/674d8359-9413-4e18-9103-39e894c7791d.png" alt="Black men's biker leather jacket on hanger">
-      <div class="category-label"><h3>Biker Jackets</h3><span>SHOP COLLECTION →</span></div>
-    </a>
-    <a class="category" href="#collection" onclick="setFilter('classic')">
-      <img src="images/classic.jpg" alt="Brown men's classic leather jacket on hanger">
-      <div class="category-label"><h3>Classic Jackets</h3><span>SHOP COLLECTION →</span></div>
-    </a>
-    <a class="category" href="#collection" onclick="setFilter('bomber')">
-      <img src="images/bomber.jpg" alt="Men's black bomber leather jacket on hanger">
-      <div class="category-label"><h3>Bomber Jackets</h3><span>SHOP COLLECTION →</span></div>
-    </a>
-    <a class="category" href="#collection" onclick="setFilter('vintage')">
-      <img src="images/vintage.jpg" alt="Men's vintage brown leather jacket on hanger">
-      <div class="category-label"><h3>Vintage Jackets</h3><span>SHOP COLLECTION →</span></div>
-    </a>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Premium apparel · Worldwide enquiries</div>
+    <h1>Timeless Style.<br><span>Bold Character.</span></h1>
+    <p>
+      Discover statement leather jackets and everyday hoodies,
+      designed for people who value character, comfort and
+      considered style.
+    </p>
+    <a class="btn" href="#collection">EXPLORE COLLECTION</a>
+    <a class="btn btn-outline" href="#wholesale">BULK ENQUIRIES</a>
   </div>
 </section>
 
-<section class="collection" id="collection">
-  <div class="heading">
-    <div><div class="kicker">Made for modern men</div><h2>Premium Leather Jackets.</h2></div>
-    <p>Rich leather tones. Distinctive silhouettes. A showroom-inspired presentation.</p>
-  </div>
-  <div class="filters">
-    <button class="filter active" onclick="setFilter('all',this)">All Jackets</button>
-    <button class="filter" onclick="setFilter('biker',this)">Biker</button>
-    <button class="filter" onclick="setFilter('classic',this)">Classic</button>
-    <button class="filter" onclick="setFilter('bomber',this)">Bomber</button>
-    <button class="filter" onclick="setFilter('vintage',this)">Vintage</button>
-  </div>
-  <div class="products" id="products"></div>
-</section>
-
-<section id="story">
-  <div class="story">
-    <img src="images/showroom.jpg" alt="RJSSON men's leather jacket luxury showroom display">
+<section class="section" id="collection">
+  <div class="section-heading">
     <div>
-      <div class="kicker">The RJSSON philosophy</div>
-      <h2>Designed to<br><em style="color:var(--gold)">Stand Apart.</em></h2>
-      <p>RJSSON brings together the enduring appeal of men's leather jackets and a refined, cinematic showroom aesthetic. Choose a silhouette that expresses your own character.</p>
-      <a class="button" href="#collection">Discover the Jackets →</a>
+      <div class="eyebrow">Discover RJSSON</div>
+      <h2>Our Collection</h2>
+      <p>Explore the collection and ask us about available sizes and colours.</p>
+    </div>
+  </div>
+
+  <div class="filters" aria-label="Filter products">
+    <button class="active" data-filter="all" type="button">All Products</button>
+    <button data-filter="jacket" type="button">Leather Jackets</button>
+    <button data-filter="hoodie" type="button">Hoodies</button>
+  </div>
+
+  <div class="grid" id="productGrid"></div>
+</section>
+
+<section class="section" id="about">
+  <div class="story">
+    <div class="story-panel">
+      <div>
+        <strong>RJSSON</strong>
+        <p class="muted">Made for your own kind of style.</p>
+      </div>
+    </div>
+
+    <div class="story-text">
+      <div class="eyebrow">Our philosophy</div>
+      <h2>Style With Substance</h2>
+      <p>
+        RJSSON brings together contemporary clothing and timeless
+        outerwear. Our collection includes leather-jacket styles,
+        everyday hoodies and versatile wardrobe essentials.
+      </p>
+      <p>
+        Looking for a custom design or a larger quantity?
+        Contact us to discuss product specifications, sizes,
+        materials and available production options.
+      </p>
+      <a class="btn" href="#contact">CONTACT RJSSON</a>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="promise">
-    <div><strong>01 / Style</strong><span>Distinctive men's jacket designs</span></div>
-    <div><strong>02 / Selection</strong><span>Multiple styles and colours</span></div>
-    <div><strong>03 / Ordering</strong><span>Cash on Delivery requested</span></div>
+<section class="section" id="wholesale">
+  <div class="story">
+    <div>
+      <div class="eyebrow">For retailers and businesses</div>
+      <h2>Wholesale & Custom Orders</h2>
+      <p class="muted">
+        Interested in ordering for a store, brand or business?
+        Contact us with your preferred products and quantities.
+        We can discuss available designs, customisation, samples,
+        minimum order quantities and delivery options.
+      </p>
+      <a class="btn" href="#contact">REQUEST A QUOTE</a>
+    </div>
+
+    <div class="story-panel">
+      <div>
+        <strong>YOUR BRAND.<br>YOUR VISION.</strong>
+        <p class="muted">Ask us about available customisation options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" aria-label="Shopping information">
+  <div class="feature">
+    <strong>Worldwide Enquiries</strong>
+    <span>Contact us about delivery to your country.</span>
+  </div>
+  <div class="feature">
+    <strong>Product Details</strong>
+    <span>Ask about sizes, colours and materials.</span>
+  </div>
+  <div class="feature">
+    <strong>Bulk Orders</strong>
+    <span>Discuss quantity and quotation options.</span>
+  </div>
+  <div class="feature">
+    <strong>Personal Support</strong>
+    <span>Contact us directly for assistance.</span>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2>Contact RJSSON</h2>
+      <p>Send us your product enquiry or wholesale request.</p>
+    </div>
+  </div>
+
+  <div class="contact-grid">
+    <div class="story-text">
+      <h2>Let's Talk Clothing.</h2>
+      <p class="muted">
+        Tell us which products interest you, the quantity you need,
+        your destination country and any customisation requirements.
+      </p>
+      <p>WhatsApp: <a class="btn" id="whatsappDirect" href="#">CHAT ON WHATSAPP</a></p>
+      <p>Instagram:
+        <a class="btn btn-outline"
+           href="https://www.instagram.com/malikmuhammadABUBAKAR77/"
+           target="_blank" rel="noopener">VISIT INSTAGRAM</a>
+      </p>
+      <p class="muted">
+        Product prices and delivery costs should be confirmed before
+        placing an international order.
+      </p>
+    </div>
+
+    <form id="enquiryForm">
+      <input id="customerName" required placeholder="Your name">
+      <input id="customerEmail" type="email" placeholder="Email address">
+      <select id="enquiryType">
+        <option value="Individual order enquiry">Individual order</option>
+        <option value="Wholesale / bulk order enquiry">Wholesale / bulk order</option>
+        <option value="Custom manufacturing enquiry">Custom manufacturing</option>
+      </select>
+      <input id="destination" required placeholder="Destination country">
+      <textarea id="enquiryDetails" required
+        placeholder="Product, size, quantity and any questions"></textarea>
+      <button class="btn" type="submit">SEND ENQUIRY VIA WHATSAPP</button>
+      <p class="cart-note">
+        This form opens WhatsApp with your enquiry. It does not
+        automatically charge you or confirm an order.
+      </p>
+    </form>
   </div>
 </section>
 </main>
 
 <footer>
-  <a href="#home" class="logo">RJSSON<small>THE LEATHER ATELIER</small></a>
-  <p>Premium Men's Leather Jackets<br>Cash on Delivery availability must be confirmed with the seller.<br>© <span id="year"></span> RJSSON. All rights reserved.</p>
+  <div class="logo">RJSSON</div>
+  Premium Clothing · Leather Jackets · Hoodies<br>
+  WhatsApp: 03126674869<br>
+  Instagram:
+  <a href="https://www.instagram.com/malikmuhammadABUBAKAR77/"
+     target="_blank" rel="noopener">@malikmuhammadABUBAKAR77</a>
+  <br><br>
+  © <span id="year"></span> RJSSON. All rights reserved.
 </footer>
-<div class="toast" id="toast"></div>
+
+<div class="cart-box" id="cartBox" aria-live="polite">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button id="cartClose" type="button" aria-label="Close cart">×</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-total" id="cartTotal">Estimated subtotal: $0.00</div>
+  <p class="cart-note">
+    This is a shopping enquiry cart, not a payment checkout.
+    Shipping and final prices must be confirmed with RJSSON.
+  </p>
+  <button class="btn" id="checkoutWhatsApp" type="button">
+    SEND CART VIA WHATSAPP
+  </button>
+</div>
 
 <script>
-const jackets=[
-  {name:"The Maverick",type:"biker",price:12500,image:"674d8359-9413-4e18-9103-39e894c7791d.png",tag:"BESTSELLER"},
- {name:"The Heritage",type:"classic",price:11800,image:"classic.jpg",tag:"CLASSIC"},
- {name:"The Midnight",type:"bomber",price:13200,image:"bomber.jpg",tag:"PREMIUM"},
- {name:"The Vintage",type:"vintage",price:14000,image:"vintage.jpg",tag:"VINTAGE"},
- {name:"The Outlaw",type:"biker",price:12900,image:"biker-2.jpg",tag:"SIGNATURE"},
- {name:"The Essential",type:"classic",price:11500,image:"classic-2.jpg",tag:"TIMELESS"},
- {name:"The Aviator",type:"bomber",price:13500,image:"bomber-2.jpg",tag:"NEW ARRIVAL"},
- {name:"The Legacy",type:"vintage",price:14500,image:"vintage-2.jpg",tag:"ATELIER EDIT"}
-];
-let bag=[];
-let currentFilter="all";
+/*
+  RJSSON product catalogue.
+  Replace example prices with your confirmed selling prices.
+  Put the corresponding image files inside the images folder.
+*/
 
-function render(filter="all"){
- currentFilter=filter;
- const items=jackets.filter(j=>filter==="all"||j.type===filter);
- document.getElementById("products").innerHTML=items.map((j,i)=>`
- <article class="product" style="animation-delay:${i*.06}s">
-   <div class="product-photo">
-     <img loading="lazy" src="images/${j.image}" alt="${j.name} men's leather jacket displayed on a hanger">
-     <span class="tag">${j.tag}</span>
-     <button class="add" onclick="add('${j.name}')">ADD TO BAG +</button>
-   </div>
-   <div class="product-info"><small>${j.type} leather collection</small><h3>${j.name}</h3><p>Rs. ${j.price.toLocaleString("en-PK")}</p></div>
- </article>`).join("");
- document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.textContent.toLowerCase().includes(filter)||filter==="all"&&b.textContent==="All Jackets"));
+const WHATSAPP_NUMBER = "923126674869";
+
+const products = [
+  {
+    id: 1, name: "The Winter Biker", type: "jacket",
+    price: 149, image: "images/biker.jpg",
+    description: "Biker silhouette with a shearling-inspired collar."
+  },
+  {
+    id: 2, name: "The Rebel Biker", type: "jacket",
+    price: 139, image: "images/biker-2.jpg",
+    description: "Black moto-inspired styling with zip details."
+  },
+  {
+    id: 3, name: "The Classic", type: "jacket",
+    price: 129, image: "images/classic.jpg",
+    description: "A timeless jacket silhouette for everyday wear."
+  },
+  {
+    id: 4, name: "The Bomber", type: "jacket",
+    price: 125, image: "images/bomber.jpg",
+    description: "A versatile bomber-inspired outerwear style."
+  },
+  {
+    id: 5, name: "The Adventurer", type: "jacket",
+    price: 159, image: "images/vintage.jpg",
+    description: "A rugged-inspired design with a warm collar."
+  },
+  {
+    id: 6, name: "The Explorer", type: "jacket",
+    price: 169, image: "images/explorer.jpg",
+    description: "A statement outerwear style for colder days."
+  },
+  {
+    id: 7, name: "The Essential Hoodie", type: "hoodie",
+    price: 79, image: "images/hoodie-black.jpg",
+    description: "Minimal black hoodie for everyday comfort."
+  },
+  {
+    id: 8, name: "The Signature Hoodie", type: "hoodie",
+    price: 74, image: "images/hoodie-cream.jpg",
+    description: "A clean cream hoodie with a subtle design."
+  },
+  {
+    id: 9, name: "The Urban Hoodie", type: "hoodie",
+    price: 79, image: "images/hoodie-grey.jpg",
+    description: "A versatile grey hoodie with a modern fit."
+  },
+  {
+    id: 10, name: "The Outdoor Hoodie", type: "hoodie",
+    price: 84, image: "images/hoodie-olive.jpg",
+    description: "An olive hoodie for relaxed everyday styling."
+  },
+  {
+    id: 11, name: "The Sport Hoodie", type: "hoodie",
+    price: 82, image: "images/hoodie-sport.jpg",
+    description: "A simple hoodie for active casual wear."
+  },
+  {
+    id: 12, name: "The Premium Hoodie", type: "hoodie",
+    price: 84, image: "images/hoodie-brown.jpg",
+    description: "A warm-toned hoodie with a premium look."
+  }
+];
+
+let cart = [];
+let activeFilter = "all";
+
+const productGrid = document.getElementById("productGrid");
+
+function renderProducts() {
+  productGrid.innerHTML = "";
+
+  const visible = products.filter(product =>
+    activeFilter === "all" || product.type === activeFilter
+  );
+
+  visible.forEach(product => {
+    const card = document.createElement("article");
+    card.className = "product";
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "product-image";
+
+    const img = document.createElement("img");
+    img.src = product.image;
+    img.alt = product.name;
+    img.loading = "lazy";
+
+    // If a photo is missing, display a helpful placeholder.
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+      imageBox.style.background =
+        "linear-gradient(145deg,#30271b,#111)";
+      if (!imageBox.querySelector(".missing-photo")) {
+        const label = document.createElement("div");
+        label.className = "missing-photo";
+        label.style.cssText =
+          "position:absolute;inset:0;display:grid;place-items:center;" +
+          "text-align:center;padding:20px;color:#d8ad65;font-family:Georgia,serif";
+        label.textContent =
+          "RJSSON — " + product.name + " (upload product photo)";
+        imageBox.appendChild(label);
+      }
+    });
+
+    imageBox.appendChild(img);
+
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent =
+      product.type === "jacket" ? "OUTERWEAR" : "ESSENTIALS";
+    imageBox.appendChild(badge);
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const title = document.createElement("h3");
+    title.textContent = product.name;
+
+    const desc = document.createElement("p");
+    desc.textContent = product.description;
+
+    const price = document.createElement("div");
+    price.className = "product-price";
+    price.textContent = "$" + product.price.toFixed(2);
+
+    const actions = document.createElement("div");
+    actions.className = "product-actions";
+
+    const addButton = document.createElement("button");
+    addButton.type = "button";
+    addButton.textContent = "ADD TO CART";
+    addButton.addEventListener("click", () => addToCart(product.id));
+
+    const quoteButton = document.createElement("button");
+    quoteButton.type = "button";
+    quoteButton.className = "quote-btn";
+    quoteButton.textContent = "ASK PRICE";
+    quoteButton.addEventListener("click", () => {
+      const message =
+        "Hello RJSSON, I am interested in " + product.name +
+        ". Please confirm current price, available sizes, material " +
+        "and shipping to my country.";
+      openWhatsApp(message);
+    });
+
+    actions.append(addButton, quoteButton);
+    info.append(title, desc, price, actions);
+    card.append(imageBox, info);
+    productGrid.appendChild(card);
+  });
 }
-function setFilter(filter,button){
- render(filter);
- if(button){
-  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
-  button.classList.add("active");
- }
+
+function addToCart(id) {
+  const product = products.find(item => item.id === id);
+  if (!product) return;
+
+  cart.push(product);
+  renderCart();
+  document.getElementById("cartBox").classList.add("open");
 }
-function add(name){
- bag.push(name);
- document.getElementById("count").textContent=bag.length;
- const t=document.getElementById("toast");
- t.textContent=name+" added to your bag.";
- t.style.display="block";
- setTimeout(()=>t.style.display="none",2200);
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
 }
-function showCart(){
- if(!bag.length){alert("Your bag is empty. Choose a leather jacket first.");return}
- alert("Your selection:\n\n"+bag.join("\n")+"\n\nThis is a demo bag. Online orders are not yet connected.");
+
+function renderCart() {
+  document.getElementById("cartCount").textContent = cart.length;
+
+  const cartItems = document.getElementById("cartItems");
+  cartItems.innerHTML = "";
+
+  cart.forEach((product, index) => {
+    const row = document.createElement("div");
+    row.className = "cart-line";
+
+    const name = document.createElement("span");
+    name.textContent = product.name + " — $" + product.price.toFixed(2);
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.textContent = "Remove";
+    remove.addEventListener("click", () => removeFromCart(index));
+
+    row.append(name, remove);
+    cartItems.appendChild(row);
+  });
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  document.getElementById("cartTotal").textContent =
+    "Estimated subtotal: $" + total.toFixed(2);
 }
-document.getElementById("year").textContent=new Date().getFullYear();
-render();
+
+function openWhatsApp(message) {
+  const url = "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank", "noopener");
+}
+
+document.querySelectorAll("[data-filter]").forEach(button => {
+  button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+
+    document.querySelectorAll("[data-filter]").forEach(item =>
+      item.classList.toggle("active", item === button)
+    );
+
+    renderProducts();
+  });
+});
+
+document.getElementById("cartToggle").addEventListener("click", () => {
+  document.getElementById("cartBox").classList.toggle("open");
+});
+
+document.getElementById("cartClose").addEventListener("click", () => {
+  document.getElementById("cartBox").classList.remove("open");
+});
+
+document.getElementById("checkoutWhatsApp").addEventListener("click", () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty. Please add a product first.");
+    return;
+  }
+
+  const lines = cart.map(item =>
+    "- " + item.name + " ($" + item.price.toFixed(2) + ")"
+  ).join("\n");
+
+  const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+
+  const message =
+    "Hello RJSSON! I would like to enquire about these products:\n\n" +
+    lines +
+    "\n\nEstimated product subtotal: $" + subtotal.toFixed(2) +
+    "\nPlease confirm availability, sizes, shipping charges and final total.";
+
+  openWhatsApp(message);
+});
+
+document.getElementById("enquiryForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const email = document.getElementById("customerEmail").value.trim();
+  const type = document.getElementById("enquiryType").value;
+  const destination = document.getElementById("destination").value.trim();
+  const details = document.getElementById("enquiryDetails").value.trim();
+
+  if (!name || !destination || !details) {
+    alert("Please complete your name, destination country and enquiry.");
+    return;
+  }
+
+  const message =
+    "Hello RJSSON!\n" +
+    "Name: " + name + "\n" +
+    "Email: " + (email || "Not provided") + "\n" +
+    "Enquiry: " + type + "\n" +
+    "Destination: " + destination + "\n" +
+    "Details: " + details;
+
+  openWhatsApp(message);
+});
+
+document.getElementById("whatsappDirect").href =
+  "https://wa.me/" + WHATSAPP_NUMBER;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderProducts();
+renderCart();
+  // RJSSON premium scroll reveal
+const revealElements = document.querySelectorAll(
+  ".section-heading, .story, .story-panel, " +
+  ".story-text, .feature, .contact-grid"
+);
+
+revealElements.forEach(element => {
+  element.classList.add("reveal");
+});
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach(element => {
+    element.classList.add("visible");
+  });
+}
 </script>
 
-<!-- Floating WhatsApp Button -->
-<a
-  href="https://wa.me/923497247214?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20a%20men%27s%20leather%20jacket%20from%20RJSSON."
-  target="_blank"
-  rel="noopener noreferrer"
-  class="whatsapp-button"
-  aria-label="Order RJSSON leather jackets on WhatsApp"
->
-  <span class="whatsapp-icon">☏</span>
-  <span>ORDER ON WHATSAPP</span>
-</a>
-
-<style>
-.whatsapp-button {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 19px;
-  background: #c49a65;
-  color: #120d08;
-  border: 1px solid #f0d0a0;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  box-shadow: 0 5px 25px #0009;
-  transition: .3s ease;
-}
-.whatsapp-button:hover {
-  background: #f0dfc7;
-  transform: translateY(-4px);
-}
-.whatsapp-icon {
-  font-size: 22px;
-}
-@media(max-width:480px) {
-  .whatsapp-button {
-    right: 12px;
-    bottom: 12px;
-    padding: 12px 15px;
-  }
-}
-</style>
 </body>
 </html>
